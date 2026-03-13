@@ -1,0 +1,135 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://raw.githubusercontent.com/api-evangelist/google-merchant-center/refs/heads/main/json-schema/json-schema.yml
+title: Google Merchant API Schema
+description: >-
+  JSON Schema for the Google Merchant API covering accounts, products,
+  inventories, promotions, and reports.
+type: object
+properties:
+  Account:
+    type: object
+    properties:
+      name:
+        type: string
+        description: Resource name of the account.
+      accountId:
+        type: string
+        description: The ID of the account.
+      accountName:
+        type: string
+        description: Human-readable name of the account.
+      languageCode:
+        type: string
+        description: Language code of the account.
+      timeZone:
+        type: string
+        description: Timezone of the account.
+    required:
+      - name
+      - accountId
+  ProductInput:
+    type: object
+    properties:
+      name:
+        type: string
+        description: Resource name of the product input.
+      channel:
+        type: string
+        description: The channel of the product.
+        enum:
+          - ONLINE
+          - LOCAL
+      offerId:
+        type: string
+        description: The unique ID of the offer.
+      contentLanguage:
+        type: string
+        description: The two-letter ISO 639-1 language code.
+      feedLabel:
+        type: string
+        description: The feed label for the product.
+      attributes:
+        type: object
+        properties:
+          title:
+            type: string
+          description:
+            type: string
+          link:
+            type: string
+            format: uri
+          imageLink:
+            type: string
+            format: uri
+          price:
+            type: object
+            properties:
+              amountMicros:
+                type: string
+              currencyCode:
+                type: string
+          availability:
+            type: string
+            enum:
+              - in_stock
+              - out_of_stock
+              - preorder
+              - backorder
+          condition:
+            type: string
+            enum:
+              - new
+              - refurbished
+              - used
+          brand:
+            type: string
+          gtin:
+            type: string
+    required:
+      - channel
+      - offerId
+      - contentLanguage
+  LocalInventory:
+    type: object
+    properties:
+      name:
+        type: string
+      storeCode:
+        type: string
+        description: The store code of the physical store.
+      price:
+        type: object
+        properties:
+          amountMicros:
+            type: string
+          currencyCode:
+            type: string
+      availability:
+        type: string
+      quantity:
+        type: string
+    required:
+      - storeCode
+  Promotion:
+    type: object
+    properties:
+      name:
+        type: string
+      promotionId:
+        type: string
+        description: The unique ID of the promotion.
+      contentLanguage:
+        type: string
+      targetCountry:
+        type: string
+      redemptionChannel:
+        type: array
+        items:
+          type: string
+          enum:
+            - ONLINE
+            - IN_STORE
+    required:
+      - promotionId
+      - contentLanguage
+      - targetCountry

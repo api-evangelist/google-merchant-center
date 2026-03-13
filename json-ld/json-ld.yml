@@ -1,0 +1,20 @@
+"@context":
+  "@vocab": https://schema.org/
+  merchant: https://developers.google.com/merchant/api/reference/rest/
+  name: schema:name
+  description: schema:description
+  url: schema:url
+  offerId: merchant:offerId
+  channel: merchant:channel
+  contentLanguage: merchant:contentLanguage
+  feedLabel: merchant:feedLabel
+  title: schema:name
+  price: schema:price
+  availability: schema:availability
+  condition: schema:itemCondition
+  brand: schema:brand
+  gtin: schema:gtin
+  storeCode: merchant:storeCode
+  promotionId: merchant:promotionId
+  targetCountry: merchant:targetCountry
+  imageLink: schema:image
