@@ -1,6 +1,6 @@
 openapi: 3.1.0
 info:
-  title: Google Merchant API
+  title: Google Merchant Center Google Merchant API
   description: >-
     The Google Merchant API enables programmatic management of Merchant Center
     accounts including products, inventories, promotions, reports, conversions,
@@ -18,7 +18,7 @@ servers:
 paths:
   /accounts/v1/{parent}/accounts:
     get:
-      summary: List accounts
+      summary: Google Merchant Center List accounts
       description: Lists sub-accounts and standalone accounts for a merchant.
       operationId: listAccounts
       parameters:
@@ -44,7 +44,7 @@ paths:
                 $ref: '#/components/schemas/ListAccountsResponse'
   /products/v1/{parent}/productInputs:
     post:
-      summary: Insert product input
+      summary: Google Merchant Center Insert product input
       description: Uploads a product input to the Merchant Center account.
       operationId: insertProductInput
       parameters:
@@ -67,7 +67,7 @@ paths:
                 $ref: '#/components/schemas/ProductInput'
   /products/v1/{name}:
     get:
-      summary: Get product
+      summary: Google Merchant Center Get product
       description: Retrieves the processed version of a product.
       operationId: getProduct
       parameters:
@@ -85,7 +85,7 @@ paths:
                 $ref: '#/components/schemas/Product'
   /inventories/v1/{parent}/localInventories:
     post:
-      summary: Insert local inventory
+      summary: Google Merchant Center Insert local inventory
       description: Inserts a local inventory for a product at a specific store.
       operationId: insertLocalInventory
       parameters:
@@ -108,7 +108,7 @@ paths:
                 $ref: '#/components/schemas/LocalInventory'
   /promotions/v1/{parent}/promotions:
     get:
-      summary: List promotions
+      summary: Google Merchant Center List promotions
       description: Lists promotions for a Merchant Center account.
       operationId: listPromotions
       parameters:
@@ -125,7 +125,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ListPromotionsResponse'
     post:
-      summary: Create promotion
+      summary: Google Merchant Center Create promotion
       description: Creates a promotion for a Merchant Center account.
       operationId: createPromotion
       parameters:
@@ -148,7 +148,7 @@ paths:
                 $ref: '#/components/schemas/Promotion'
   /reports/v1/{parent}/reports:search:
     post:
-      summary: Search reports
+      summary: Google Merchant Center Search reports
       description: Searches for report data using a query language.
       operationId: searchReports
       parameters:
