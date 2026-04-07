@@ -42,6 +42,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ListAccountsResponse'
+      tags:
+        - Accounts
   /products/v1/{parent}/productInputs:
     post:
       summary: Google Merchant Center Insert product input
@@ -65,6 +67,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProductInput'
+      tags:
+        - Products
   /products/v1/{name}:
     get:
       summary: Google Merchant Center Get product
@@ -83,6 +87,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Product'
+      tags:
+        - Products
   /inventories/v1/{parent}/localInventories:
     post:
       summary: Google Merchant Center Insert local inventory
@@ -106,6 +112,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/LocalInventory'
+      tags:
+        - Inventories
   /promotions/v1/{parent}/promotions:
     get:
       summary: Google Merchant Center List promotions
@@ -124,6 +132,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ListPromotionsResponse'
+      tags:
+        - Promotions
     post:
       summary: Google Merchant Center Create promotion
       description: Creates a promotion for a Merchant Center account.
@@ -146,6 +156,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Promotion'
+      tags:
+        - Promotions
   /reports/v1/{parent}/reports:search:
     post:
       summary: Google Merchant Center Search reports
@@ -176,6 +188,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SearchResponse'
+      tags:
+        - Reports
 components:
   schemas:
     Account:
@@ -351,3 +365,9 @@ components:
 security:
   - oauth2:
       - https://www.googleapis.com/auth/content
+tags:
+  - name: Accounts
+  - name: Inventories
+  - name: Products
+  - name: Promotions
+  - name: Reports

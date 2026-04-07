@@ -13,13 +13,13 @@ modified: '2026-03-16'
 specificationVersion: '0.19'
 type: Index
 tags:
-  - Shopping
   - E-Commerce
-  - Products
-  - Inventory
-  - Promotions
-  - Merchant Center
   - Google Shopping
+  - Inventory
+  - Merchant Center
+  - Products
+  - Promotions
+  - Shopping
 apis:
   - name: Google Merchant API
     description: >-
