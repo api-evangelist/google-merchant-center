@@ -35,7 +35,7 @@ apis:
         url: openapi/openapi.yml
       - type: Authentication
         url: https://developers.google.com/merchant/api/guides/authentication
-      - type: Getting Started
+      - type: GettingStarted
         url: https://developers.google.com/shopping-content/guides/quickstart
       - type: JSONSchema
         url: json-schema/json-schema.yml
@@ -44,7 +44,7 @@ apis:
 common:
   - type: Portal
     url: https://www.google.com/retail/solutions/merchant-center/
-  - type: Getting Started
+  - type: GettingStarted
     url: https://developers.google.com/shopping-content/guides/quickstart
   - type: Documentation
     url: https://developers.google.com/merchant/api
@@ -52,11 +52,11 @@ common:
     url: https://developers.google.com/merchant/api/guides/authentication
   - type: Pricing
     url: https://www.google.com/retail/solutions/merchant-center/
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://developers.google.com/terms
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://policies.google.com/privacy
-  - type: Status
+  - type: StatusPage
     url: https://status.cloud.google.com/
   - type: Support
     url: https://developers.google.com/shopping-content/guides/support
