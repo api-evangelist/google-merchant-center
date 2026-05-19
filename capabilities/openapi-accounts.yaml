@@ -1,0 +1,89 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Merchant Center Google Merchant API — Accounts
+  description: 'Google Merchant Center Google Merchant API — Accounts. 1 operations. Lead operation: Google Merchant Center
+    List accounts. Self-contained Naftiko capability covering one Google Merchant Center business surface.'
+  tags:
+  - Google Merchant Center
+  - Accounts
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_MERCHANT_CENTER_API_KEY: GOOGLE_MERCHANT_CENTER_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openapi-accounts
+    baseUri: https://merchantapi.googleapis.com
+    description: Google Merchant Center Google Merchant API — Accounts business capability. Self-contained, no shared references.
+    resources:
+    - name: accounts-v1-parent-accounts
+      path: /accounts/v1/{parent}/accounts
+      operations:
+      - name: listaccounts
+        method: GET
+        description: Google Merchant Center List accounts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: parent
+          in: path
+          type: string
+          required: true
+        - name: pageSize
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_MERCHANT_CENTER_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: openapi-accounts-rest
+    port: 8080
+    description: REST adapter for Google Merchant Center Google Merchant API — Accounts. One Spectral-compliant resource per
+      consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/accounts/v1/{parent}/accounts
+      name: accounts-v1-parent-accounts
+      description: REST surface for accounts-v1-parent-accounts.
+      operations:
+      - method: GET
+        name: listaccounts
+        description: Google Merchant Center List accounts
+        call: openapi-accounts.listaccounts
+        with:
+          parent: rest.parent
+          pageSize: rest.pageSize
+          pageToken: rest.pageToken
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openapi-accounts-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Merchant Center Google Merchant API — Accounts. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: google-merchant-center-list-accounts
+      description: Google Merchant Center List accounts
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-accounts.listaccounts
+      with:
+        parent: tools.parent
+        pageSize: tools.pageSize
+        pageToken: tools.pageToken
+      outputParameters:
+      - type: object
+        mapping: $.

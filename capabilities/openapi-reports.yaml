@@ -1,0 +1,86 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Merchant Center Google Merchant API — Reports
+  description: 'Google Merchant Center Google Merchant API — Reports. 1 operations. Lead operation: Google Merchant Center
+    Search reports. Self-contained Naftiko capability covering one Google Merchant Center business surface.'
+  tags:
+  - Google Merchant Center
+  - Reports
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_MERCHANT_CENTER_API_KEY: GOOGLE_MERCHANT_CENTER_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openapi-reports
+    baseUri: https://merchantapi.googleapis.com
+    description: Google Merchant Center Google Merchant API — Reports business capability. Self-contained, no shared references.
+    resources:
+    - name: reports-v1-parent-reports:search
+      path: /reports/v1/{parent}/reports:search
+      operations:
+      - name: searchreports
+        method: POST
+        description: Google Merchant Center Search reports
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: parent
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_MERCHANT_CENTER_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: openapi-reports-rest
+    port: 8080
+    description: REST adapter for Google Merchant Center Google Merchant API — Reports. One Spectral-compliant resource per
+      consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/reports/v1/{parent}/reports-search
+      name: reports-v1-parent-reports-search
+      description: REST surface for reports-v1-parent-reports:search.
+      operations:
+      - method: POST
+        name: searchreports
+        description: Google Merchant Center Search reports
+        call: openapi-reports.searchreports
+        with:
+          parent: rest.parent
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openapi-reports-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Merchant Center Google Merchant API — Reports. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: google-merchant-center-search-reports
+      description: Google Merchant Center Search reports
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: openapi-reports.searchreports
+      with:
+        parent: tools.parent
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

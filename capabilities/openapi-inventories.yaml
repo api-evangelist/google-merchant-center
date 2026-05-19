@@ -1,0 +1,86 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Merchant Center Google Merchant API — Inventories
+  description: 'Google Merchant Center Google Merchant API — Inventories. 1 operations. Lead operation: Google Merchant Center
+    Insert local inventory. Self-contained Naftiko capability covering one Google Merchant Center business surface.'
+  tags:
+  - Google Merchant Center
+  - Inventories
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_MERCHANT_CENTER_API_KEY: GOOGLE_MERCHANT_CENTER_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openapi-inventories
+    baseUri: https://merchantapi.googleapis.com
+    description: Google Merchant Center Google Merchant API — Inventories business capability. Self-contained, no shared references.
+    resources:
+    - name: inventories-v1-parent-localInventories
+      path: /inventories/v1/{parent}/localInventories
+      operations:
+      - name: insertlocalinventory
+        method: POST
+        description: Google Merchant Center Insert local inventory
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: parent
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_MERCHANT_CENTER_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: openapi-inventories-rest
+    port: 8080
+    description: REST adapter for Google Merchant Center Google Merchant API — Inventories. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/inventories/v1/{parent}/localinventories
+      name: inventories-v1-parent-localinventories
+      description: REST surface for inventories-v1-parent-localInventories.
+      operations:
+      - method: POST
+        name: insertlocalinventory
+        description: Google Merchant Center Insert local inventory
+        call: openapi-inventories.insertlocalinventory
+        with:
+          parent: rest.parent
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openapi-inventories-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Merchant Center Google Merchant API — Inventories. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: google-merchant-center-insert-local
+      description: Google Merchant Center Insert local inventory
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: openapi-inventories.insertlocalinventory
+      with:
+        parent: tools.parent
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

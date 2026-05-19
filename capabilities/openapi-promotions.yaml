@@ -1,0 +1,120 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Merchant Center Google Merchant API — Promotions
+  description: 'Google Merchant Center Google Merchant API — Promotions. 2 operations. Lead operation: Google Merchant Center
+    List promotions. Self-contained Naftiko capability covering one Google Merchant Center business surface.'
+  tags:
+  - Google Merchant Center
+  - Promotions
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_MERCHANT_CENTER_API_KEY: GOOGLE_MERCHANT_CENTER_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openapi-promotions
+    baseUri: https://merchantapi.googleapis.com
+    description: Google Merchant Center Google Merchant API — Promotions business capability. Self-contained, no shared references.
+    resources:
+    - name: promotions-v1-parent-promotions
+      path: /promotions/v1/{parent}/promotions
+      operations:
+      - name: listpromotions
+        method: GET
+        description: Google Merchant Center List promotions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: parent
+          in: path
+          type: string
+          required: true
+      - name: createpromotion
+        method: POST
+        description: Google Merchant Center Create promotion
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: parent
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_MERCHANT_CENTER_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: openapi-promotions-rest
+    port: 8080
+    description: REST adapter for Google Merchant Center Google Merchant API — Promotions. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/promotions/v1/{parent}/promotions
+      name: promotions-v1-parent-promotions
+      description: REST surface for promotions-v1-parent-promotions.
+      operations:
+      - method: GET
+        name: listpromotions
+        description: Google Merchant Center List promotions
+        call: openapi-promotions.listpromotions
+        with:
+          parent: rest.parent
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createpromotion
+        description: Google Merchant Center Create promotion
+        call: openapi-promotions.createpromotion
+        with:
+          parent: rest.parent
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openapi-promotions-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Merchant Center Google Merchant API — Promotions. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: google-merchant-center-list-promotions
+      description: Google Merchant Center List promotions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-promotions.listpromotions
+      with:
+        parent: tools.parent
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-merchant-center-create-promotion
+      description: Google Merchant Center Create promotion
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: openapi-promotions.createpromotion
+      with:
+        parent: tools.parent
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
