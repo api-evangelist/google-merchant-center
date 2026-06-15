@@ -1,0 +1,214 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Merchant Center Google Merchant API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+      "accessTokenUrl": "https://oauth2.googleapis.com/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Accounts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Merchant Center List accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://merchantapi.googleapis.com/accounts/v1/:parent/accounts",
+            "params": [
+              {
+                "name": "parent",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lists sub-accounts and standalone accounts for a merchant."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Products",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Merchant Center Insert product input",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://merchantapi.googleapis.com/products/v1/:parent/productInputs",
+            "params": [
+              {
+                "name": "parent",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Uploads a product input to the Merchant Center account."
+        },
+        {
+          "info": {
+            "name": "Google Merchant Center Get product",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://merchantapi.googleapis.com/products/v1/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieves the processed version of a product."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Inventories",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Merchant Center Insert local inventory",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://merchantapi.googleapis.com/inventories/v1/:parent/localInventories",
+            "params": [
+              {
+                "name": "parent",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Inserts a local inventory for a product at a specific store."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Promotions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Merchant Center List promotions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://merchantapi.googleapis.com/promotions/v1/:parent/promotions",
+            "params": [
+              {
+                "name": "parent",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists promotions for a Merchant Center account."
+        },
+        {
+          "info": {
+            "name": "Google Merchant Center Create promotion",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://merchantapi.googleapis.com/promotions/v1/:parent/promotions",
+            "params": [
+              {
+                "name": "parent",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a promotion for a Merchant Center account."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Reports",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Merchant Center Search reports",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://merchantapi.googleapis.com/reports/v1/:parent/reports:search",
+            "params": [
+              {
+                "name": "parent",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Searches for report data using a query language."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
