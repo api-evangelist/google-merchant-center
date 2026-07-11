@@ -39,6 +39,12 @@ apis:
       - type: JSONLD
         url: json-ld/json-ld.yml
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-merchant-center-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-merchant-center-domain-security.yml
+  - type: Authentication
+    url: authentication/google-merchant-center-authentication.yml
   - type: OAuthScopes
     url: scopes/google-merchant-center-scopes.yml
   - type: GitHubOrganization
