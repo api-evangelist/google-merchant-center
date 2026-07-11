@@ -39,6 +39,8 @@ apis:
       - type: JSONLD
         url: json-ld/json-ld.yml
 common:
+  - type: OAuthScopes
+    url: scopes/google-merchant-center-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/google
   - type: Portal
