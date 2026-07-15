@@ -39,6 +39,8 @@ apis:
       - type: JSONLD
         url: json-ld/json-ld.yml
 common:
+  - type: AgenticAccess
+    url: agentic-access/google-merchant-center-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/google-merchant-center-vulnerability-disclosure.yml
   - type: DomainSecurity
