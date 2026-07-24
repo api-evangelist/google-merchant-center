@@ -1,0 +1,72 @@
+openapi: 3.1.0
+info:
+  title: Google Merchant Center Google Merchant Accounts Reports API
+  description: The Google Merchant API enables programmatic management of Merchant Center accounts including products, inventories, promotions, reports, conversions, and order tracking for Google Shopping.
+  version: v1
+  contact:
+    name: Google
+    url: https://developers.google.com/merchant/api/overview
+  license:
+    name: Google APIs Terms of Service
+    url: https://developers.google.com/terms
+servers:
+- url: https://merchantapi.googleapis.com
+  description: Merchant API server
+security:
+- oauth2:
+  - https://www.googleapis.com/auth/content
+tags:
+- name: Reports
+paths:
+  /reports/v1/{parent}/reports:search:
+    post:
+      summary: Google Merchant Center Search reports
+      description: Searches for report data using a query language.
+      operationId: searchReports
+      parameters:
+      - name: parent
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query:
+                  type: string
+                pageSize:
+                  type: integer
+                pageToken:
+                  type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+      tags:
+      - Reports
+components:
+  schemas:
+    SearchResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            type: object
+        nextPageToken:
+          type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/content: Manage Google Shopping data

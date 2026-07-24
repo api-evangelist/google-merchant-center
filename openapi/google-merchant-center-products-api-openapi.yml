@@ -1,0 +1,153 @@
+openapi: 3.1.0
+info:
+  title: Google Merchant Center Google Merchant Accounts Products API
+  description: The Google Merchant API enables programmatic management of Merchant Center accounts including products, inventories, promotions, reports, conversions, and order tracking for Google Shopping.
+  version: v1
+  contact:
+    name: Google
+    url: https://developers.google.com/merchant/api/overview
+  license:
+    name: Google APIs Terms of Service
+    url: https://developers.google.com/terms
+servers:
+- url: https://merchantapi.googleapis.com
+  description: Merchant API server
+security:
+- oauth2:
+  - https://www.googleapis.com/auth/content
+tags:
+- name: Products
+paths:
+  /products/v1/{parent}/productInputs:
+    post:
+      summary: Google Merchant Center Insert product input
+      description: Uploads a product input to the Merchant Center account.
+      operationId: insertProductInput
+      parameters:
+      - name: parent
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductInput'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductInput'
+      tags:
+      - Products
+  /products/v1/{name}:
+    get:
+      summary: Google Merchant Center Get product
+      description: Retrieves the processed version of a product.
+      operationId: getProduct
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+      tags:
+      - Products
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        name:
+          type: string
+        channel:
+          type: string
+        offerId:
+          type: string
+        contentLanguage:
+          type: string
+        feedLabel:
+          type: string
+        attributes:
+          type: object
+        productStatus:
+          type: object
+          properties:
+            destinationStatuses:
+              type: array
+              items:
+                type: object
+                properties:
+                  reportingContext:
+                    type: string
+                  approvedCountries:
+                    type: array
+                    items:
+                      type: string
+                  disapprovedCountries:
+                    type: array
+                    items:
+                      type: string
+    ProductInput:
+      type: object
+      properties:
+        name:
+          type: string
+        product:
+          type: string
+        channel:
+          type: string
+          enum:
+          - ONLINE
+          - LOCAL
+        offerId:
+          type: string
+        contentLanguage:
+          type: string
+        feedLabel:
+          type: string
+        attributes:
+          type: object
+          properties:
+            title:
+              type: string
+            description:
+              type: string
+            link:
+              type: string
+            imageLink:
+              type: string
+            price:
+              type: object
+              properties:
+                amountMicros:
+                  type: string
+                currencyCode:
+                  type: string
+            availability:
+              type: string
+            condition:
+              type: string
+            brand:
+              type: string
+            gtin:
+              type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/content: Manage Google Shopping data

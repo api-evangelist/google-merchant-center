@@ -1,0 +1,81 @@
+openapi: 3.1.0
+info:
+  title: Google Merchant Center Google Merchant Accounts API
+  description: The Google Merchant API enables programmatic management of Merchant Center accounts including products, inventories, promotions, reports, conversions, and order tracking for Google Shopping.
+  version: v1
+  contact:
+    name: Google
+    url: https://developers.google.com/merchant/api/overview
+  license:
+    name: Google APIs Terms of Service
+    url: https://developers.google.com/terms
+servers:
+- url: https://merchantapi.googleapis.com
+  description: Merchant API server
+security:
+- oauth2:
+  - https://www.googleapis.com/auth/content
+tags:
+- name: Accounts
+paths:
+  /accounts/v1/{parent}/accounts:
+    get:
+      summary: Google Merchant Center List accounts
+      description: Lists sub-accounts and standalone accounts for a merchant.
+      operationId: listAccounts
+      parameters:
+      - name: parent
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+      - name: pageToken
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListAccountsResponse'
+      tags:
+      - Accounts
+components:
+  schemas:
+    ListAccountsResponse:
+      type: object
+      properties:
+        accounts:
+          type: array
+          items:
+            $ref: '#/components/schemas/Account'
+        nextPageToken:
+          type: string
+    Account:
+      type: object
+      properties:
+        name:
+          type: string
+        accountId:
+          type: string
+        accountName:
+          type: string
+        languageCode:
+          type: string
+        timeZone:
+          type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/content: Manage Google Shopping data
