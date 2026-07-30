@@ -4,7 +4,20 @@ description: >-
   The Google Merchant API enables programmatic management of Merchant Center accounts including product data,
   inventories, promotions, reports, conversions, and order tracking. It replaces the Content API for Shopping and
   provides access to manage product feeds, local and regional inventory, and shopping campaign data.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/google-merchant-center.png
 url: https://raw.githubusercontent.com/api-evangelist/google-merchant-center/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -19,26 +32,109 @@ tags:
   - Promotions
   - Shopping
 apis:
-  - name: Google Merchant API
-    description: >-
-      The Merchant API provides programmatic access to manage Merchant Center accounts, products, inventories,
-      promotions, reports, conversions, and order tracking for Google Shopping integration.
-    humanURL: https://developers.google.com/merchant/api/overview
-    baseURL: https://merchantapi.googleapis.com
-    properties:
-      - type: Documentation
-        url: https://developers.google.com/merchant/api/reference/rest
-      - type: OpenAPI
-        url: openapi/openapi.yml
-      - type: Authentication
-        url: https://developers.google.com/merchant/api/guides/authentication
-      - type: GettingStarted
-        url: https://developers.google.com/shopping-content/guides/quickstart
-      - type: JSONSchema
-        url: json-schema/json-schema.yml
-      - type: JSONLD
-        url: json-ld/json-ld.yml
+- aid: google-merchant-center:google-merchant-center-accounts-api
+  name: Google Merchant Center Accounts API
+  description: The Accounts API from Google Merchant Center — 1 operation(s) for accounts.
+  humanURL: https://developers.google.com/merchant/api/overview
+  baseURL: https://merchantapi.googleapis.com
+  tags:
+  - Accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/google-merchant-center-accounts-api-openapi.yml
+  - type: Documentation
+    url: https://developers.google.com/merchant/api/reference/rest
+  - type: Authentication
+    url: https://developers.google.com/merchant/api/guides/authentication
+  - type: GettingStarted
+    url: https://developers.google.com/shopping-content/guides/quickstart
+  - type: JSONSchema
+    url: json-schema/json-schema.yml
+  - type: JSONLD
+    url: json-ld/json-ld.yml
+- aid: google-merchant-center:google-merchant-center-inventories-api
+  name: Google Merchant Center Inventories API
+  description: The Inventories API from Google Merchant Center — 1 operation(s) for inventories.
+  humanURL: https://developers.google.com/merchant/api/overview
+  baseURL: https://merchantapi.googleapis.com
+  tags:
+  - Inventories
+  properties:
+  - type: OpenAPI
+    url: openapi/google-merchant-center-inventories-api-openapi.yml
+  - type: Documentation
+    url: https://developers.google.com/merchant/api/reference/rest
+  - type: Authentication
+    url: https://developers.google.com/merchant/api/guides/authentication
+  - type: GettingStarted
+    url: https://developers.google.com/shopping-content/guides/quickstart
+  - type: JSONSchema
+    url: json-schema/json-schema.yml
+  - type: JSONLD
+    url: json-ld/json-ld.yml
+- aid: google-merchant-center:google-merchant-center-products-api
+  name: Google Merchant Center Products API
+  description: The Products API from Google Merchant Center — 2 operation(s) for products.
+  humanURL: https://developers.google.com/merchant/api/overview
+  baseURL: https://merchantapi.googleapis.com
+  tags:
+  - Products
+  properties:
+  - type: OpenAPI
+    url: openapi/google-merchant-center-products-api-openapi.yml
+  - type: Documentation
+    url: https://developers.google.com/merchant/api/reference/rest
+  - type: Authentication
+    url: https://developers.google.com/merchant/api/guides/authentication
+  - type: GettingStarted
+    url: https://developers.google.com/shopping-content/guides/quickstart
+  - type: JSONSchema
+    url: json-schema/json-schema.yml
+  - type: JSONLD
+    url: json-ld/json-ld.yml
+- aid: google-merchant-center:google-merchant-center-promotions-api
+  name: Google Merchant Center Promotions API
+  description: The Promotions API from Google Merchant Center — 1 operation(s) for promotions.
+  humanURL: https://developers.google.com/merchant/api/overview
+  baseURL: https://merchantapi.googleapis.com
+  tags:
+  - Promotions
+  properties:
+  - type: OpenAPI
+    url: openapi/google-merchant-center-promotions-api-openapi.yml
+  - type: Documentation
+    url: https://developers.google.com/merchant/api/reference/rest
+  - type: Authentication
+    url: https://developers.google.com/merchant/api/guides/authentication
+  - type: GettingStarted
+    url: https://developers.google.com/shopping-content/guides/quickstart
+  - type: JSONSchema
+    url: json-schema/json-schema.yml
+  - type: JSONLD
+    url: json-ld/json-ld.yml
+- aid: google-merchant-center:google-merchant-center-reports-api
+  name: Google Merchant Center Reports API
+  description: The Reports API from Google Merchant Center — 1 operation(s) for reports.
+  humanURL: https://developers.google.com/merchant/api/overview
+  baseURL: https://merchantapi.googleapis.com
+  tags:
+  - Reports
+  properties:
+  - type: OpenAPI
+    url: openapi/google-merchant-center-reports-api-openapi.yml
+  - type: Documentation
+    url: https://developers.google.com/merchant/api/reference/rest
+  - type: Authentication
+    url: https://developers.google.com/merchant/api/guides/authentication
+  - type: GettingStarted
+    url: https://developers.google.com/shopping-content/guides/quickstart
+  - type: JSONSchema
+    url: json-schema/json-schema.yml
+  - type: JSONLD
+    url: json-ld/json-ld.yml
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/google-merchant-center/overview
   - type: AgenticAccess
     url: agentic-access/google-merchant-center-agentic-access.yml
   - type: VulnerabilityDisclosure
