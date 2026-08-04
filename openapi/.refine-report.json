@@ -1,0 +1,22 @@
+{
+  "provider": "google-merchant-center",
+  "sources": [
+    "google-merchant-center-accounts-api-openapi.yml",
+    "google-merchant-center-inventories-api-openapi.yml",
+    "google-merchant-center-products-api-openapi.yml",
+    "google-merchant-center-promotions-api-openapi.yml",
+    "google-merchant-center-reports-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-merchant-center-accounts-api-openapi.yml",
+    "google-merchant-center-inventories-api-openapi.yml",
+    "google-merchant-center-products-api-openapi.yml",
+    "google-merchant-center-promotions-api-openapi.yml",
+    "google-merchant-center-reports-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

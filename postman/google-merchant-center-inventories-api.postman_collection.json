@@ -1,0 +1,201 @@
+{
+  "info": {
+    "_postman_id": "111fcd69-13c7-49e3-8531-d858156db081",
+    "name": "Google Merchant Center Google Merchant Accounts Inventories API",
+    "description": "The Google Merchant API enables programmatic management of Merchant Center accounts including products, inventories, promotions, reports, conversions, and order tracking for Google Shopping.\n\nContact Support:\n Name: Google",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:49:24.000Z",
+    "updatedAt": "2026-07-28T01:49:24.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-111fcd69-13c7-49e3-8531-d858156db081"
+  },
+  "item": [
+    {
+      "name": "inventories",
+      "item": [
+        {
+          "name": "v1",
+          "item": [
+            {
+              "name": "{parent}",
+              "item": [
+                {
+                  "name": "localInventories",
+                  "item": [
+                    {
+                      "name": "Google Merchant Center Insert local inventory",
+                      "id": "181955d3-3031-4e44-8a8a-1af6f46e3d49",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"account\": \"<string>\",\n  \"storeCode\": \"<string>\",\n  \"price\": {\n    \"amountMicros\": \"<string>\",\n    \"currencyCode\": \"<string>\"\n  },\n  \"availability\": \"<string>\",\n  \"quantity\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/inventories/v1/:parent/localInventories",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "inventories",
+                            "v1",
+                            ":parent",
+                            "localInventories"
+                          ],
+                          "variable": [
+                            {
+                              "id": "a00a9046-c51d-46bb-92ac-55d4e6ffce6f",
+                              "key": "parent",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Inserts a local inventory for a product at a specific store."
+                      },
+                      "response": [
+                        {
+                          "id": "2a3bad00-d0cf-4957-b0d2-24ea501a708c",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"account\": \"<string>\",\n  \"storeCode\": \"<string>\",\n  \"price\": {\n    \"amountMicros\": \"<string>\",\n    \"currencyCode\": \"<string>\"\n  },\n  \"availability\": \"<string>\",\n  \"quantity\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/inventories/v1/:parent/localInventories",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "inventories",
+                                "v1",
+                                ":parent",
+                                "localInventories"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "parent"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"name\": \"<string>\",\n  \"account\": \"<string>\",\n  \"storeCode\": \"<string>\",\n  \"price\": {\n    \"amountMicros\": \"<string>\",\n    \"currencyCode\": \"<string>\"\n  },\n  \"availability\": \"<string>\",\n  \"quantity\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T01:49:25.000Z",
+                          "updatedAt": "2026-07-28T01:49:25.000Z",
+                          "uid": "35240-2a3bad00-d0cf-4957-b0d2-24ea501a708c"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:49:25.000Z",
+                      "updatedAt": "2026-07-28T01:49:25.000Z",
+                      "uid": "35240-181955d3-3031-4e44-8a8a-1af6f46e3d49"
+                    }
+                  ],
+                  "id": "b4f7db0f-1ef6-4e60-a0e3-3e86c3081e5a",
+                  "createdAt": "2026-07-28T01:49:25.000Z",
+                  "updatedAt": "2026-07-28T01:49:25.000Z",
+                  "uid": "35240-b4f7db0f-1ef6-4e60-a0e3-3e86c3081e5a"
+                }
+              ],
+              "id": "ed9049ef-dc21-4fee-82a0-84050d801dda",
+              "createdAt": "2026-07-28T01:49:25.000Z",
+              "updatedAt": "2026-07-28T01:49:25.000Z",
+              "uid": "35240-ed9049ef-dc21-4fee-82a0-84050d801dda"
+            }
+          ],
+          "id": "352a4e6a-8fc0-4d1f-bc93-85a8287cb449",
+          "createdAt": "2026-07-28T01:49:25.000Z",
+          "updatedAt": "2026-07-28T01:49:25.000Z",
+          "uid": "35240-352a4e6a-8fc0-4d1f-bc93-85a8287cb449"
+        }
+      ],
+      "id": "eef29fec-20bf-4a7c-96e6-f600e784dff0",
+      "createdAt": "2026-07-28T01:49:25.000Z",
+      "updatedAt": "2026-07-28T01:49:25.000Z",
+      "uid": "35240-eef29fec-20bf-4a7c-96e6-f600e784dff0"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/content",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://merchantapi.googleapis.com"
+    }
+  ]
+}

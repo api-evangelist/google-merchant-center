@@ -1,0 +1,300 @@
+{
+  "info": {
+    "_postman_id": "e0e1503d-7baa-488a-80c9-3a25aa439172",
+    "name": "Google Merchant Center Google Merchant Accounts Products API",
+    "description": "The Google Merchant API enables programmatic management of Merchant Center accounts including products, inventories, promotions, reports, conversions, and order tracking for Google Shopping.\n\nContact Support:\n Name: Google",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:49:25.000Z",
+    "updatedAt": "2026-07-28T01:49:25.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-e0e1503d-7baa-488a-80c9-3a25aa439172"
+  },
+  "item": [
+    {
+      "name": "products",
+      "item": [
+        {
+          "name": "v1",
+          "item": [
+            {
+              "name": "{parent}",
+              "item": [
+                {
+                  "name": "productInputs",
+                  "item": [
+                    {
+                      "name": "Google Merchant Center Insert product input",
+                      "id": "801055ec-f42d-4fe2-b563-9635721a6086",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"product\": \"<string>\",\n  \"channel\": \"ONLINE\",\n  \"offerId\": \"<string>\",\n  \"contentLanguage\": \"<string>\",\n  \"feedLabel\": \"<string>\",\n  \"attributes\": {\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"link\": \"<string>\",\n    \"imageLink\": \"<string>\",\n    \"price\": {\n      \"amountMicros\": \"<string>\",\n      \"currencyCode\": \"<string>\"\n    },\n    \"availability\": \"<string>\",\n    \"condition\": \"<string>\",\n    \"brand\": \"<string>\",\n    \"gtin\": \"<string>\"\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/products/v1/:parent/productInputs",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "products",
+                            "v1",
+                            ":parent",
+                            "productInputs"
+                          ],
+                          "variable": [
+                            {
+                              "id": "0b9c2d76-eac9-42c1-a978-1e1e897b7f6b",
+                              "key": "parent",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Uploads a product input to the Merchant Center account."
+                      },
+                      "response": [
+                        {
+                          "id": "836b5dd3-117e-4bbc-8ec2-a439e3204338",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"product\": \"<string>\",\n  \"channel\": \"ONLINE\",\n  \"offerId\": \"<string>\",\n  \"contentLanguage\": \"<string>\",\n  \"feedLabel\": \"<string>\",\n  \"attributes\": {\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"link\": \"<string>\",\n    \"imageLink\": \"<string>\",\n    \"price\": {\n      \"amountMicros\": \"<string>\",\n      \"currencyCode\": \"<string>\"\n    },\n    \"availability\": \"<string>\",\n    \"condition\": \"<string>\",\n    \"brand\": \"<string>\",\n    \"gtin\": \"<string>\"\n  }\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/products/v1/:parent/productInputs",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "products",
+                                "v1",
+                                ":parent",
+                                "productInputs"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "parent"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"name\": \"<string>\",\n  \"product\": \"<string>\",\n  \"channel\": \"ONLINE\",\n  \"offerId\": \"<string>\",\n  \"contentLanguage\": \"<string>\",\n  \"feedLabel\": \"<string>\",\n  \"attributes\": {\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"link\": \"<string>\",\n    \"imageLink\": \"<string>\",\n    \"price\": {\n      \"amountMicros\": \"<string>\",\n      \"currencyCode\": \"<string>\"\n    },\n    \"availability\": \"<string>\",\n    \"condition\": \"<string>\",\n    \"brand\": \"<string>\",\n    \"gtin\": \"<string>\"\n  }\n}",
+                          "createdAt": "2026-07-28T01:49:26.000Z",
+                          "updatedAt": "2026-07-28T01:49:26.000Z",
+                          "uid": "35240-836b5dd3-117e-4bbc-8ec2-a439e3204338"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:49:26.000Z",
+                      "updatedAt": "2026-07-28T01:49:26.000Z",
+                      "uid": "35240-801055ec-f42d-4fe2-b563-9635721a6086"
+                    }
+                  ],
+                  "id": "7ffacaf3-9d07-4787-bc16-7192306f7220",
+                  "createdAt": "2026-07-28T01:49:26.000Z",
+                  "updatedAt": "2026-07-28T01:49:26.000Z",
+                  "uid": "35240-7ffacaf3-9d07-4787-bc16-7192306f7220"
+                }
+              ],
+              "id": "64000d9a-671f-4b19-b8e1-3c38426b364c",
+              "createdAt": "2026-07-28T01:49:26.000Z",
+              "updatedAt": "2026-07-28T01:49:26.000Z",
+              "uid": "35240-64000d9a-671f-4b19-b8e1-3c38426b364c"
+            },
+            {
+              "name": "{name}",
+              "item": [
+                {
+                  "name": "Google Merchant Center Get product",
+                  "id": "0e11a036-4f6d-40b3-9667-2f9e26d4da27",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/products/v1/:name",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "products",
+                        "v1",
+                        ":name"
+                      ],
+                      "variable": [
+                        {
+                          "id": "71733e77-700c-4750-8323-73f7823f9aca",
+                          "key": "name",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Retrieves the processed version of a product."
+                  },
+                  "response": [
+                    {
+                      "id": "2ece4478-0007-485b-8b27-473c05113d90",
+                      "name": "Successful response",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/products/v1/:name",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "products",
+                            "v1",
+                            ":name"
+                          ],
+                          "variable": [
+                            {
+                              "key": "name"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"name\": \"<string>\",\n  \"channel\": \"<string>\",\n  \"offerId\": \"<string>\",\n  \"contentLanguage\": \"<string>\",\n  \"feedLabel\": \"<string>\",\n  \"attributes\": {},\n  \"productStatus\": {\n    \"destinationStatuses\": [\n      {\n        \"reportingContext\": \"<string>\",\n        \"approvedCountries\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"disapprovedCountries\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      {\n        \"reportingContext\": \"<string>\",\n        \"approvedCountries\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"disapprovedCountries\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    ]\n  }\n}",
+                      "createdAt": "2026-07-28T01:49:26.000Z",
+                      "updatedAt": "2026-07-28T01:49:26.000Z",
+                      "uid": "35240-2ece4478-0007-485b-8b27-473c05113d90"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:49:26.000Z",
+                  "updatedAt": "2026-07-28T01:49:26.000Z",
+                  "uid": "35240-0e11a036-4f6d-40b3-9667-2f9e26d4da27"
+                }
+              ],
+              "id": "f7ce949d-7bcd-4701-b4ae-d4a467aedb32",
+              "createdAt": "2026-07-28T01:49:26.000Z",
+              "updatedAt": "2026-07-28T01:49:26.000Z",
+              "uid": "35240-f7ce949d-7bcd-4701-b4ae-d4a467aedb32"
+            }
+          ],
+          "id": "4732e9b3-0352-4177-acab-cb83839de403",
+          "createdAt": "2026-07-28T01:49:26.000Z",
+          "updatedAt": "2026-07-28T01:49:26.000Z",
+          "uid": "35240-4732e9b3-0352-4177-acab-cb83839de403"
+        }
+      ],
+      "id": "37c0bf44-7652-4291-9d84-cd89fa06506e",
+      "createdAt": "2026-07-28T01:49:26.000Z",
+      "updatedAt": "2026-07-28T01:49:26.000Z",
+      "uid": "35240-37c0bf44-7652-4291-9d84-cd89fa06506e"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/content",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://merchantapi.googleapis.com"
+    }
+  ]
+}

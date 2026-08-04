@@ -1,0 +1,193 @@
+{
+  "info": {
+    "_postman_id": "19a1ea83-e93e-4e7a-bbfd-379aa7185582",
+    "name": "Google Merchant Center Google Merchant Accounts API",
+    "description": "The Google Merchant API enables programmatic management of Merchant Center accounts including products, inventories, promotions, reports, conversions, and order tracking for Google Shopping.\n\nContact Support:\n Name: Google",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:49:23.000Z",
+    "updatedAt": "2026-07-28T01:49:23.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-19a1ea83-e93e-4e7a-bbfd-379aa7185582"
+  },
+  "item": [
+    {
+      "name": "accounts",
+      "item": [
+        {
+          "name": "v1",
+          "item": [
+            {
+              "name": "{parent}",
+              "item": [
+                {
+                  "name": "accounts",
+                  "item": [
+                    {
+                      "name": "Google Merchant Center List accounts",
+                      "id": "f453e9ac-4388-466b-a7a1-04cbfec6ba12",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/accounts/v1/:parent/accounts?pageSize=<integer>&pageToken=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "accounts",
+                            "v1",
+                            ":parent",
+                            "accounts"
+                          ],
+                          "query": [
+                            {
+                              "key": "pageSize",
+                              "value": "<integer>"
+                            },
+                            {
+                              "key": "pageToken",
+                              "value": "<string>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "id": "8980c140-4725-4b78-941d-0bf4f386121b",
+                              "key": "parent",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Lists sub-accounts and standalone accounts for a merchant."
+                      },
+                      "response": [
+                        {
+                          "id": "a0ceea68-8c11-4d90-b003-4f5a7369fe90",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/accounts/v1/:parent/accounts?pageSize=<integer>&pageToken=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "accounts",
+                                "v1",
+                                ":parent",
+                                "accounts"
+                              ],
+                              "query": [
+                                {
+                                  "key": "pageSize",
+                                  "value": "<integer>"
+                                },
+                                {
+                                  "key": "pageToken",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "parent"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"accounts\": [\n    {\n      \"name\": \"<string>\",\n      \"accountId\": \"<string>\",\n      \"accountName\": \"<string>\",\n      \"languageCode\": \"<string>\",\n      \"timeZone\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"accountId\": \"<string>\",\n      \"accountName\": \"<string>\",\n      \"languageCode\": \"<string>\",\n      \"timeZone\": \"<string>\"\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T01:49:24.000Z",
+                          "updatedAt": "2026-07-28T01:49:24.000Z",
+                          "uid": "35240-a0ceea68-8c11-4d90-b003-4f5a7369fe90"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:49:24.000Z",
+                      "updatedAt": "2026-07-28T01:49:24.000Z",
+                      "uid": "35240-f453e9ac-4388-466b-a7a1-04cbfec6ba12"
+                    }
+                  ],
+                  "id": "a5ea4f1c-9a7a-4bd6-a6e1-8755650269b2",
+                  "createdAt": "2026-07-28T01:49:24.000Z",
+                  "updatedAt": "2026-07-28T01:49:24.000Z",
+                  "uid": "35240-a5ea4f1c-9a7a-4bd6-a6e1-8755650269b2"
+                }
+              ],
+              "id": "69f4817f-c831-4b9b-a595-d21b595bd209",
+              "createdAt": "2026-07-28T01:49:24.000Z",
+              "updatedAt": "2026-07-28T01:49:24.000Z",
+              "uid": "35240-69f4817f-c831-4b9b-a595-d21b595bd209"
+            }
+          ],
+          "id": "606341ac-9cd7-4d66-8d9b-aecb2fec5087",
+          "createdAt": "2026-07-28T01:49:24.000Z",
+          "updatedAt": "2026-07-28T01:49:24.000Z",
+          "uid": "35240-606341ac-9cd7-4d66-8d9b-aecb2fec5087"
+        }
+      ],
+      "id": "3b308bb6-5f70-4217-ad16-c97f40fd5d70",
+      "createdAt": "2026-07-28T01:49:24.000Z",
+      "updatedAt": "2026-07-28T01:49:24.000Z",
+      "uid": "35240-3b308bb6-5f70-4217-ad16-c97f40fd5d70"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/content",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://merchantapi.googleapis.com"
+    }
+  ]
+}

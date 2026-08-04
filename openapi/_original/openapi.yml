@@ -1,0 +1,373 @@
+openapi: 3.1.0
+info:
+  title: Google Merchant Center Google Merchant API
+  description: >-
+    The Google Merchant API enables programmatic management of Merchant Center
+    accounts including products, inventories, promotions, reports, conversions,
+    and order tracking for Google Shopping.
+  version: v1
+  contact:
+    name: Google
+    url: https://developers.google.com/merchant/api/overview
+  license:
+    name: Google APIs Terms of Service
+    url: https://developers.google.com/terms
+servers:
+  - url: https://merchantapi.googleapis.com
+    description: Merchant API server
+paths:
+  /accounts/v1/{parent}/accounts:
+    get:
+      summary: Google Merchant Center List accounts
+      description: Lists sub-accounts and standalone accounts for a merchant.
+      operationId: listAccounts
+      parameters:
+        - name: parent
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListAccountsResponse'
+      tags:
+        - Accounts
+  /products/v1/{parent}/productInputs:
+    post:
+      summary: Google Merchant Center Insert product input
+      description: Uploads a product input to the Merchant Center account.
+      operationId: insertProductInput
+      parameters:
+        - name: parent
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductInput'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductInput'
+      tags:
+        - Products
+  /products/v1/{name}:
+    get:
+      summary: Google Merchant Center Get product
+      description: Retrieves the processed version of a product.
+      operationId: getProduct
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+      tags:
+        - Products
+  /inventories/v1/{parent}/localInventories:
+    post:
+      summary: Google Merchant Center Insert local inventory
+      description: Inserts a local inventory for a product at a specific store.
+      operationId: insertLocalInventory
+      parameters:
+        - name: parent
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LocalInventory'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LocalInventory'
+      tags:
+        - Inventories
+  /promotions/v1/{parent}/promotions:
+    get:
+      summary: Google Merchant Center List promotions
+      description: Lists promotions for a Merchant Center account.
+      operationId: listPromotions
+      parameters:
+        - name: parent
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListPromotionsResponse'
+      tags:
+        - Promotions
+    post:
+      summary: Google Merchant Center Create promotion
+      description: Creates a promotion for a Merchant Center account.
+      operationId: createPromotion
+      parameters:
+        - name: parent
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Promotion'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Promotion'
+      tags:
+        - Promotions
+  /reports/v1/{parent}/reports:search:
+    post:
+      summary: Google Merchant Center Search reports
+      description: Searches for report data using a query language.
+      operationId: searchReports
+      parameters:
+        - name: parent
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query:
+                  type: string
+                pageSize:
+                  type: integer
+                pageToken:
+                  type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+      tags:
+        - Reports
+components:
+  schemas:
+    Account:
+      type: object
+      properties:
+        name:
+          type: string
+        accountId:
+          type: string
+        accountName:
+          type: string
+        languageCode:
+          type: string
+        timeZone:
+          type: string
+    ListAccountsResponse:
+      type: object
+      properties:
+        accounts:
+          type: array
+          items:
+            $ref: '#/components/schemas/Account'
+        nextPageToken:
+          type: string
+    ProductInput:
+      type: object
+      properties:
+        name:
+          type: string
+        product:
+          type: string
+        channel:
+          type: string
+          enum:
+            - ONLINE
+            - LOCAL
+        offerId:
+          type: string
+        contentLanguage:
+          type: string
+        feedLabel:
+          type: string
+        attributes:
+          type: object
+          properties:
+            title:
+              type: string
+            description:
+              type: string
+            link:
+              type: string
+            imageLink:
+              type: string
+            price:
+              type: object
+              properties:
+                amountMicros:
+                  type: string
+                currencyCode:
+                  type: string
+            availability:
+              type: string
+            condition:
+              type: string
+            brand:
+              type: string
+            gtin:
+              type: string
+    Product:
+      type: object
+      properties:
+        name:
+          type: string
+        channel:
+          type: string
+        offerId:
+          type: string
+        contentLanguage:
+          type: string
+        feedLabel:
+          type: string
+        attributes:
+          type: object
+        productStatus:
+          type: object
+          properties:
+            destinationStatuses:
+              type: array
+              items:
+                type: object
+                properties:
+                  reportingContext:
+                    type: string
+                  approvedCountries:
+                    type: array
+                    items:
+                      type: string
+                  disapprovedCountries:
+                    type: array
+                    items:
+                      type: string
+    LocalInventory:
+      type: object
+      properties:
+        name:
+          type: string
+        account:
+          type: string
+        storeCode:
+          type: string
+        price:
+          type: object
+          properties:
+            amountMicros:
+              type: string
+            currencyCode:
+              type: string
+        availability:
+          type: string
+        quantity:
+          type: string
+    Promotion:
+      type: object
+      properties:
+        name:
+          type: string
+        promotionId:
+          type: string
+        contentLanguage:
+          type: string
+        targetCountry:
+          type: string
+        redemptionChannel:
+          type: array
+          items:
+            type: string
+        promotionEffectiveTimePeriod:
+          type: object
+          properties:
+            startTime:
+              type: string
+              format: date-time
+            endTime:
+              type: string
+              format: date-time
+    ListPromotionsResponse:
+      type: object
+      properties:
+        promotions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Promotion'
+        nextPageToken:
+          type: string
+    SearchResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            type: object
+        nextPageToken:
+          type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/content: Manage Google Shopping data
+security:
+  - oauth2:
+      - https://www.googleapis.com/auth/content
+tags:
+  - name: Accounts
+  - name: Inventories
+  - name: Products
+  - name: Promotions
+  - name: Reports

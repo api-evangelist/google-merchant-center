@@ -1,0 +1,201 @@
+{
+  "info": {
+    "_postman_id": "8eab094c-217b-485b-95a4-2a45dcbfbe0f",
+    "name": "Google Merchant Center Google Merchant Accounts Reports API",
+    "description": "The Google Merchant API enables programmatic management of Merchant Center accounts including products, inventories, promotions, reports, conversions, and order tracking for Google Shopping.\n\nContact Support:\n Name: Google",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:49:27.000Z",
+    "updatedAt": "2026-07-28T01:49:27.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-8eab094c-217b-485b-95a4-2a45dcbfbe0f"
+  },
+  "item": [
+    {
+      "name": "reports",
+      "item": [
+        {
+          "name": "v1",
+          "item": [
+            {
+              "name": "{parent}",
+              "item": [
+                {
+                  "name": "reports:search",
+                  "item": [
+                    {
+                      "name": "Google Merchant Center Search reports",
+                      "id": "5ce9dc30-1174-4c00-8240-e5efa97d9a67",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"query\": \"<string>\",\n  \"pageSize\": \"<integer>\",\n  \"pageToken\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/reports/v1/:parent/reports:search",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "reports",
+                            "v1",
+                            ":parent",
+                            "reports:search"
+                          ],
+                          "variable": [
+                            {
+                              "id": "4ce58f9e-353b-45ac-bc86-e385aa3ad9ee",
+                              "key": "parent",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Searches for report data using a query language."
+                      },
+                      "response": [
+                        {
+                          "id": "40714fdc-3198-4154-97a0-bad1b0adcda6",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"query\": \"<string>\",\n  \"pageSize\": \"<integer>\",\n  \"pageToken\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/reports/v1/:parent/reports:search",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "reports",
+                                "v1",
+                                ":parent",
+                                "reports:search"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "parent"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"nextPageToken\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T01:49:28.000Z",
+                          "updatedAt": "2026-07-28T01:49:28.000Z",
+                          "uid": "35240-40714fdc-3198-4154-97a0-bad1b0adcda6"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:49:27.000Z",
+                      "updatedAt": "2026-07-28T01:49:27.000Z",
+                      "uid": "35240-5ce9dc30-1174-4c00-8240-e5efa97d9a67"
+                    }
+                  ],
+                  "id": "867b3dd7-96c4-4df3-b0b7-b70e262bb4eb",
+                  "createdAt": "2026-07-28T01:49:27.000Z",
+                  "updatedAt": "2026-07-28T01:49:27.000Z",
+                  "uid": "35240-867b3dd7-96c4-4df3-b0b7-b70e262bb4eb"
+                }
+              ],
+              "id": "e6ee4bf9-dd60-412c-a577-3876c5ab3671",
+              "createdAt": "2026-07-28T01:49:27.000Z",
+              "updatedAt": "2026-07-28T01:49:27.000Z",
+              "uid": "35240-e6ee4bf9-dd60-412c-a577-3876c5ab3671"
+            }
+          ],
+          "id": "5e90fcc9-5a3a-45aa-b6f0-aa04ecd63735",
+          "createdAt": "2026-07-28T01:49:27.000Z",
+          "updatedAt": "2026-07-28T01:49:27.000Z",
+          "uid": "35240-5e90fcc9-5a3a-45aa-b6f0-aa04ecd63735"
+        }
+      ],
+      "id": "21528092-7709-4c6e-ae2e-4c40d6db4b05",
+      "createdAt": "2026-07-28T01:49:27.000Z",
+      "updatedAt": "2026-07-28T01:49:27.000Z",
+      "uid": "35240-21528092-7709-4c6e-ae2e-4c40d6db4b05"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/content",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://merchantapi.googleapis.com"
+    }
+  ]
+}
