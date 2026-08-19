@@ -1,0 +1,70 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Merchant Center Google Merchant Accounts Promotions API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+      "accessTokenUrl": "https://oauth2.googleapis.com/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Promotions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Merchant Center List promotions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://merchantapi.googleapis.com/promotions/v1/:parent/promotions",
+            "params": [
+              {
+                "name": "parent",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists promotions for a Merchant Center account."
+        },
+        {
+          "info": {
+            "name": "Google Merchant Center Create promotion",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://merchantapi.googleapis.com/promotions/v1/:parent/promotions",
+            "params": [
+              {
+                "name": "parent",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a promotion for a Merchant Center account."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

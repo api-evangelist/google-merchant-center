@@ -1,0 +1,274 @@
+{
+  "item": [
+    {
+      "id": "ca2015fd-6f77-4348-94e6-a27f3d28c5c7",
+      "name": "Promotions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "da57e8f6-cd91-4029-9630-6e0b18140953",
+          "name": "Google Merchant Center List promotions",
+          "request": {
+            "name": "Google Merchant Center List promotions",
+            "description": {
+              "content": "Lists promotions for a Merchant Center account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "promotions",
+                "v1",
+                ":parent",
+                "promotions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "parent",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3bb23b6e-2549-4672-bfb3-eee6b25b5fe8",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "promotions",
+                    "v1",
+                    ":parent",
+                    "promotions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "parent",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"promotions\": [\n    {\n      \"name\": \"string\",\n      \"promotionId\": \"string\",\n      \"contentLanguage\": \"string\",\n      \"targetCountry\": \"string\",\n      \"redemptionChannel\": [\n        \"string\",\n        \"string\"\n      ],\n      \"promotionEffectiveTimePeriod\": {\n        \"startTime\": \"1948-10-30T01:12:11.837Z\",\n        \"endTime\": \"2013-07-21T07:28:18.220Z\"\n      }\n    },\n    {\n      \"name\": \"string\",\n      \"promotionId\": \"string\",\n      \"contentLanguage\": \"string\",\n      \"targetCountry\": \"string\",\n      \"redemptionChannel\": [\n        \"string\",\n        \"string\"\n      ],\n      \"promotionEffectiveTimePeriod\": {\n        \"startTime\": \"1983-08-15T09:41:53.308Z\",\n        \"endTime\": \"1947-08-03T05:44:02.532Z\"\n      }\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8fb2c1d9-8ef7-435d-b2c3-f44c597b006b",
+          "name": "Google Merchant Center Create promotion",
+          "request": {
+            "name": "Google Merchant Center Create promotion",
+            "description": {
+              "content": "Creates a promotion for a Merchant Center account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "promotions",
+                "v1",
+                ":parent",
+                "promotions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "parent",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"promotionId\": \"<string>\",\n  \"contentLanguage\": \"<string>\",\n  \"targetCountry\": \"<string>\",\n  \"redemptionChannel\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"promotionEffectiveTimePeriod\": {\n    \"startTime\": \"<dateTime>\",\n    \"endTime\": \"<dateTime>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0e03b1ee-6324-44c3-a81b-5e2b395bd539",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "promotions",
+                    "v1",
+                    ":parent",
+                    "promotions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "parent",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"promotionId\": \"<string>\",\n  \"contentLanguage\": \"<string>\",\n  \"targetCountry\": \"<string>\",\n  \"redemptionChannel\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"promotionEffectiveTimePeriod\": {\n    \"startTime\": \"<dateTime>\",\n    \"endTime\": \"<dateTime>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"promotionId\": \"string\",\n  \"contentLanguage\": \"string\",\n  \"targetCountry\": \"string\",\n  \"redemptionChannel\": [\n    \"string\",\n    \"string\"\n  ],\n  \"promotionEffectiveTimePeriod\": {\n    \"startTime\": \"1989-09-23T05:33:03.233Z\",\n    \"endTime\": \"1980-10-17T07:30:07.287Z\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://merchantapi.googleapis.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/content"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "ac89e750-e01c-47c0-9aff-9e8eacb946cf",
+    "name": "Google Merchant Center Google Merchant Accounts Promotions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Google Merchant API enables programmatic management of Merchant Center accounts including products, inventories, promotions, reports, conversions, and order tracking for Google Shopping.\n\nContact Support:\n Name: Google",
+      "type": "text/plain"
+    }
+  }
+}

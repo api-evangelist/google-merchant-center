@@ -1,0 +1,174 @@
+{
+  "item": [
+    {
+      "id": "7c14e3ff-c9cc-4902-88fc-85d0b7e8d1fb",
+      "name": "Inventories",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6eabfeb1-e1b4-49ee-b88a-9e99a1e8296a",
+          "name": "Google Merchant Center Insert local inventory",
+          "request": {
+            "name": "Google Merchant Center Insert local inventory",
+            "description": {
+              "content": "Inserts a local inventory for a product at a specific store.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "inventories",
+                "v1",
+                ":parent",
+                "localInventories"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "parent",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"account\": \"<string>\",\n  \"storeCode\": \"<string>\",\n  \"price\": {\n    \"amountMicros\": \"<string>\",\n    \"currencyCode\": \"<string>\"\n  },\n  \"availability\": \"<string>\",\n  \"quantity\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9494a95a-9c7d-40d9-ab74-91bb6cf4317c",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "inventories",
+                    "v1",
+                    ":parent",
+                    "localInventories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "parent",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"account\": \"<string>\",\n  \"storeCode\": \"<string>\",\n  \"price\": {\n    \"amountMicros\": \"<string>\",\n    \"currencyCode\": \"<string>\"\n  },\n  \"availability\": \"<string>\",\n  \"quantity\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"account\": \"string\",\n  \"storeCode\": \"string\",\n  \"price\": {\n    \"amountMicros\": \"string\",\n    \"currencyCode\": \"string\"\n  },\n  \"availability\": \"string\",\n  \"quantity\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://merchantapi.googleapis.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/content"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "1183262c-5b97-4cee-be09-5ba72375eada",
+    "name": "Google Merchant Center Google Merchant Accounts Inventories API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Google Merchant API enables programmatic management of Merchant Center accounts including products, inventories, promotions, reports, conversions, and order tracking for Google Shopping.\n\nContact Support:\n Name: Google",
+      "type": "text/plain"
+    }
+  }
+}

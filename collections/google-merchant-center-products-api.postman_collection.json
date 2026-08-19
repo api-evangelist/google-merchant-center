@@ -1,0 +1,272 @@
+{
+  "item": [
+    {
+      "id": "01b4bd57-a503-41f6-850f-edcc9ae0ea6f",
+      "name": "Products",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9e4f0917-a725-4535-abb8-0f43d0bb9301",
+          "name": "Google Merchant Center Insert product input",
+          "request": {
+            "name": "Google Merchant Center Insert product input",
+            "description": {
+              "content": "Uploads a product input to the Merchant Center account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "products",
+                "v1",
+                ":parent",
+                "productInputs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "parent",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"product\": \"<string>\",\n  \"channel\": \"<string>\",\n  \"offerId\": \"<string>\",\n  \"contentLanguage\": \"<string>\",\n  \"feedLabel\": \"<string>\",\n  \"attributes\": {\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"link\": \"<string>\",\n    \"imageLink\": \"<string>\",\n    \"price\": {\n      \"amountMicros\": \"<string>\",\n      \"currencyCode\": \"<string>\"\n    },\n    \"availability\": \"<string>\",\n    \"condition\": \"<string>\",\n    \"brand\": \"<string>\",\n    \"gtin\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "55c4b46d-04a3-4a5d-b6fa-2c50d4e54dea",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    "v1",
+                    ":parent",
+                    "productInputs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "parent",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"product\": \"<string>\",\n  \"channel\": \"<string>\",\n  \"offerId\": \"<string>\",\n  \"contentLanguage\": \"<string>\",\n  \"feedLabel\": \"<string>\",\n  \"attributes\": {\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"link\": \"<string>\",\n    \"imageLink\": \"<string>\",\n    \"price\": {\n      \"amountMicros\": \"<string>\",\n      \"currencyCode\": \"<string>\"\n    },\n    \"availability\": \"<string>\",\n    \"condition\": \"<string>\",\n    \"brand\": \"<string>\",\n    \"gtin\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"product\": \"string\",\n  \"channel\": \"ONLINE\",\n  \"offerId\": \"string\",\n  \"contentLanguage\": \"string\",\n  \"feedLabel\": \"string\",\n  \"attributes\": {\n    \"title\": \"string\",\n    \"description\": \"string\",\n    \"link\": \"string\",\n    \"imageLink\": \"string\",\n    \"price\": {\n      \"amountMicros\": \"string\",\n      \"currencyCode\": \"string\"\n    },\n    \"availability\": \"string\",\n    \"condition\": \"string\",\n    \"brand\": \"string\",\n    \"gtin\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f58dfcf1-1d6f-45f9-a9ba-56e7736c1373",
+          "name": "Google Merchant Center Get product",
+          "request": {
+            "name": "Google Merchant Center Get product",
+            "description": {
+              "content": "Retrieves the processed version of a product.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "products",
+                "v1",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e672c4e8-df88-4d9a-93bc-842178d3f582",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    "v1",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"channel\": \"string\",\n  \"offerId\": \"string\",\n  \"contentLanguage\": \"string\",\n  \"feedLabel\": \"string\",\n  \"attributes\": {},\n  \"productStatus\": {\n    \"destinationStatuses\": [\n      {\n        \"reportingContext\": \"string\",\n        \"approvedCountries\": [\n          \"string\",\n          \"string\"\n        ],\n        \"disapprovedCountries\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      {\n        \"reportingContext\": \"string\",\n        \"approvedCountries\": [\n          \"string\",\n          \"string\"\n        ],\n        \"disapprovedCountries\": [\n          \"string\",\n          \"string\"\n        ]\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://merchantapi.googleapis.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/content"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a8bcbf3a-e90d-4991-8107-e344c8813eb2",
+    "name": "Google Merchant Center Google Merchant Accounts Products API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Google Merchant API enables programmatic management of Merchant Center accounts including products, inventories, promotions, reports, conversions, and order tracking for Google Shopping.\n\nContact Support:\n Name: Google",
+      "type": "text/plain"
+    }
+  }
+}
