@@ -28,6 +28,14 @@ tags:
   - Google Shopping
   - Inventory
   - Merchant Center
+  - Product
+  - Promotions
+  - Shopping
+tags_raw:
+  - E-Commerce
+  - Google Shopping
+  - Inventory
+  - Merchant Center
   - Products
   - Promotions
   - Shopping
@@ -38,6 +46,8 @@ apis:
   humanURL: https://developers.google.com/merchant/api/overview
   baseURL: https://merchantapi.googleapis.com
   tags:
+  - Account
+  tags_raw:
   - Accounts
   properties:
   - type: OpenAPI
@@ -78,6 +88,8 @@ apis:
   humanURL: https://developers.google.com/merchant/api/overview
   baseURL: https://merchantapi.googleapis.com
   tags:
+  - Product
+  tags_raw:
   - Products
   properties:
   - type: OpenAPI
