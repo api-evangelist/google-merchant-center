@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Google Merchant Center Google Merchant Accounts Inventories API
+  title: Google Merchant Center Google Merchant Inventories API
   description: The Google Merchant API enables programmatic management of Merchant Center accounts including products, inventories, promotions, reports, conversions, and order tracking for Google Shopping.
   version: v1
   contact:

@@ -1,11 +1,7 @@
 {
   "provider": "google-merchant-center",
   "sources": [
-    "google-merchant-center-accounts-api-openapi.yml",
-    "google-merchant-center-inventories-api-openapi.yml",
-    "google-merchant-center-products-api-openapi.yml",
-    "google-merchant-center-promotions-api-openapi.yml",
-    "google-merchant-center-reports-api-openapi.yml"
+    "_original/openapi.yml"
   ],
   "outputs": [
     "google-merchant-center-accounts-api-openapi.yml",
@@ -18,12 +14,15 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "google-merchant-center-accounts-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-merchant-center-inventories-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-merchant-center-products-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-merchant-center-promotions-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-merchant-center-reports-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "google-merchant-center-accounts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-merchant-center-inventories-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-merchant-center-products-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-merchant-center-promotions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-merchant-center-reports-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
