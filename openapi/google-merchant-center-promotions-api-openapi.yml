@@ -64,15 +64,6 @@ paths:
       - Promotions
 components:
   schemas:
-    ListPromotionsResponse:
-      type: object
-      properties:
-        promotions:
-          type: array
-          items:
-            $ref: '#/components/schemas/Promotion'
-        nextPageToken:
-          type: string
     Promotion:
       type: object
       properties:
@@ -97,6 +88,15 @@ components:
             endTime:
               type: string
               format: date-time
+    ListPromotionsResponse:
+      type: object
+      properties:
+        promotions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Promotion'
+        nextPageToken:
+          type: string
   securitySchemes:
     oauth2:
       type: oauth2

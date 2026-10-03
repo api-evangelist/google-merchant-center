@@ -48,6 +48,15 @@ paths:
       - Accounts
 components:
   schemas:
+    ListAccountsResponse:
+      type: object
+      properties:
+        accounts:
+          type: array
+          items:
+            $ref: '#/components/schemas/Account'
+        nextPageToken:
+          type: string
     Account:
       type: object
       properties:
@@ -60,15 +69,6 @@ components:
         languageCode:
           type: string
         timeZone:
-          type: string
-    ListAccountsResponse:
-      type: object
-      properties:
-        accounts:
-          type: array
-          items:
-            $ref: '#/components/schemas/Account'
-        nextPageToken:
           type: string
   securitySchemes:
     oauth2:
