@@ -157,6 +157,9 @@ apis:
   - type: JSONLD
     url: json-ld/json-ld.yml
 common:
+  - type: CapabilityMap
+    url: capabilities/google-merchant-center-capability-edges.yml
+    name: Google Merchant Center Business Capability Map
   - type: Website
     url: https://www.google.com/
   - type: PostmanWorkspace
